@@ -1,2 +1,10 @@
 # SpiderMonke
-this is a spiderman mod for gorilla tag, use the trigger buttons on your controller to shot a web
+this is a spiderman mod for gorilla tag
+
+https://streamable.com/99ghq4
+
+controlls:
+
+left trigger is to shoot a web from you left hand
+
+right trigger is to shoot a web from you right hand
