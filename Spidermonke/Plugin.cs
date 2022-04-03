@@ -18,8 +18,6 @@ namespace spidermonke_v2
     {
 
         //bools
-        public float triggerpressed;
-        public float lefttriggerpressed;
         public bool cangrapple = true;
         public bool canleftgrapple = true;
         public bool wackstart = false;
@@ -28,6 +26,8 @@ namespace spidermonke_v2
         public bool hauntedModMenuEnabled = true;
 
         //floats
+        public float triggerpressed;
+        public float lefttriggerpressed;
         public float maxDistance = 100;
         public float Spring;
         public float Damper;
