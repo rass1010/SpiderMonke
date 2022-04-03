@@ -1,14 +1,16 @@
-﻿using BepInEx;
+using BepInEx;
 using BepInEx.Configuration;
 using System.IO;
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.XR;
 using Utilla;
+using System.ComponentModel;
 
 
 namespace spidermonke_v2
 {
+    [Description("HauntedModMenu")]
     [BepInPlugin(PluginInfo.GUID, PluginInfo.Name, PluginInfo.Version)]
     [BepInDependency("org.legoandmars.gorillatag.utilla", "1.5.0")]
     [ModdedGamemode]
@@ -23,6 +25,7 @@ namespace spidermonke_v2
         public bool wackstart = false;
         public bool start = true;
         public bool inAllowedRoom = false;
+        public bool hauntedModMenuEnabled = true;
 
         //floats
         public float maxDistance = 100;
@@ -68,17 +71,17 @@ namespace spidermonke_v2
             {
                 if (start)
                 {
-                Destroy(joint);
-                Destroy(leftjoint);
+                    Destroy(joint);
+                    Destroy(leftjoint);
 
-                start = false;
+                    start = false;
 
                 }
             }
 
 
             //this checks if the player is in a modded lobby
-            if (inAllowedRoom)
+            if (inAllowedRoom && hauntedModMenuEnabled)
             {
 
                 start = true;
@@ -234,6 +237,8 @@ namespace spidermonke_v2
         public void StopGrapple(GorillaLocomotion.Player __instance)
         {
 
+
+
             //stops the grapple
             lr.positionCount = 0;
             Destroy(joint);
@@ -294,7 +299,10 @@ namespace spidermonke_v2
         private void RoomJoined(string gamemode)
         {
             // The room is modded. Enable mod stuff.
+            
+            
             inAllowedRoom = true;
+                    
         }
 
         [ModdedGamemodeLeave]
@@ -302,6 +310,16 @@ namespace spidermonke_v2
         {
             // The room was left. Disable mod stuff.
             inAllowedRoom = false;
+        }
+
+        void OnEnable()
+        {
+            hauntedModMenuEnabled = true;
+        }
+
+        void OnDisable()
+        {
+            hauntedModMenuEnabled = false;
         }
 
     }
