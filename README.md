@@ -17,3 +17,5 @@ credits:
 rass1010 for creating this mod
 
 PURESPEED Plays for making the art
+
+Also FUCK YOU KORU!!
