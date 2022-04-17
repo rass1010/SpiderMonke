@@ -13,9 +13,12 @@ right trigger is to shoot a web from you right hand
 
 there is alot of bugs, ill be fixing them soon
 
+DONT USE MY MOD IN A MOD MENU
+
 credits:
 rass1010 for creating this mod
 
 PURESPEED Plays for making the art
+
 
 Also FUCK YOU KORU AND EYEROCK!!
